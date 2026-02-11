@@ -1,0 +1,172 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ========================= */
+/* 🌸 FOND ROSE ANIMÉ 🌸 */
+/* ========================= */
+
+body {
+    height: 100vh;
+    background: linear-gradient(-45deg, #ffcce6, #ffb3d9, #ffd6f0, #ff99cc);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========================= */
+/* 🌸 BULLES ANIMÉES 🌸 */
+/* ========================= */
+
+.bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.bubbles span {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    animation: rise 15s infinite ease-in;
+}
+
+.bubbles span:nth-child(1) { left: 10%; animation-duration: 12s; }
+.bubbles span:nth-child(2) { left: 25%; width: 60px; height: 60px; animation-duration: 18s; }
+.bubbles span:nth-child(3) { left: 50%; animation-duration: 14s; }
+.bubbles span:nth-child(4) { left: 70%; width: 50px; height: 50px; animation-duration: 16s; }
+.bubbles span:nth-child(5) { left: 85%; animation-duration: 20s; }
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* ========================= */
+/* 🌸 HEADER 🌸 */
+/* ========================= */
+
+header {
+    text-align: center;
+    padding: 40px;
+    color: white;
+    font-size: 28px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= */
+/* 🌸 MENU PRINCIPAL 🌸 */
+/* ========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    background: rgba(255,255,255,0.25);
+    padding: 15px 40px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #b30059;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+/* Hover effet élégant */
+.menu a:hover {
+    color: white;
+    background: #ff66b3;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ========================= */
+/* 🌸 SOUS-MENU 🌸 */
+/* ========================= */
+
+.submenu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    list-style: none;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 10px 0;
+    min-width: 180px;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: submenuFade 0.4s ease forwards;
+}
+
+@keyframes submenuFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.submenu li {
+    text-align: center;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px;
+    color: #cc0066;
+}
+
+.submenu a:hover {
+    background: #ffe6f2;
+}
+
+/* Apparition au survol */
+.menu li:hover .submenu {
+    display: block;
+}
