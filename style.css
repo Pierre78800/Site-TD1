@@ -1,0 +1,29 @@
+body{
+ background-image: url("tifo.jpg");
+
+background-size: 100%;
+
+}
+
+
+
+p{
+ color: red;
+ background-color: yellowgreen;
+ font-family: Arial;
+}
+h2{
+ color: green;
+}
+
+.special
+{
+	background-color: pink;
+}
+
+div{
+	border: 2px darkred solid;
+	border-radius: 35px;
+	width: 400px;
+	height: 300px;
+}
